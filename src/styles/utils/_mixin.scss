@@ -1,0 +1,33 @@
+@mixin section($pt: 0, $pb: 0) {
+  padding-top: $pt;
+  padding-bottom: $pb;
+}
+
+@mixin mq($range) {
+  $mob: 375px;
+  $desk: 1440px;
+
+  @if $range==mob {
+    @media screen and (min-width: $mob) {
+      @content;
+    }
+  }
+
+  @if $range==desk {
+    @media screen and (min-width: $desk) {
+      @content;
+    }
+  }
+
+  @if $range==noDesk {
+    @media (max-width:#{$desk - 0.02}) {
+      @content;
+    }
+  }
+
+  @if $range==mob-sm-only {
+    @media (min-width:$min) and (max-width:#{$mob - 0.02}) {
+      @content;
+    }
+  }
+}

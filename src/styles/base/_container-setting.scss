@@ -1,0 +1,16 @@
+@use '../utils/mixin' as *;
+
+/* Contemner settings */
+.main__container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(mob) {
+    width: 375px;
+  }
+
+  @include mq(desk) {
+    width: 1440px;
+  }
+}

@@ -1,0 +1,8 @@
+@use '../utils/mixin' as *;
+
+.main__section {
+  @include section();
+  @include mq(desk) {
+    @include section(94px, 94px);
+  }
+}
